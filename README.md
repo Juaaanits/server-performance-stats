@@ -30,4 +30,4 @@ The script (`server-stats.sh`) provides:
    ./server-stats.sh
 
 ## Project Link
-- ** Roadmap Project Page: https://roadmap.sh/projects/server-stats
+- **Roadmap.sh Project Page:** https://roadmap.sh/projects/server-stats
