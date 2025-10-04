@@ -50,7 +50,7 @@ The `server-stats.sh` script provides:
 
 ## 📂 Example Output
 
-\`\`\`bash
+```bash
 OS: Ubuntu 22.04.3 LTS
 Uptime: 3 days, 4:12
 Load Average: 0.35 0.42 0.51
@@ -70,7 +70,7 @@ Top 5 Processes by Memory:
   ...
 
 Failed login attempts (last 24h): 3
-\`\`\`
+```
 
 ---
 
