@@ -1,10 +1,7 @@
 # 🖥️ Server Performance Stats
 
-![Shell Script](https://img.shields.io/badge/Shell-Bash-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Linux](https://img.shields.io/badge/Platform-Linux-yellow)
-
-A lightweight and straightforward **Bash script** to gather essential performance metrics on any **Linux server**. Perfect for quick diagnostics, server audits, or daily monitoring routines.
+A lightweight and straightforward **Bash script** to gather essential performance metrics on any **Linux server**.  
+Perfect for quick diagnostics, server audits, or daily monitoring routines.
 
 ---
 
@@ -12,89 +9,121 @@ A lightweight and straightforward **Bash script** to gather essential performanc
 
 The `server-stats.sh` script provides:
 
-- 🏷️ **OS version**
-- ⏱️ **System uptime**
-- 📊 **Load average**
-- 👥 **Logged-in users**
-- 🧠 **CPU usage** (percentage)
-- 💾 **Memory usage** (free, used, %)
-- 🗄️ **Disk usage** (free, used, %)
-- 🔝 **Top 5 processes by CPU usage**
-- 🔝 **Top 5 processes by memory usage**
-- 🔐 **Failed login attempts** *(if `/var/log/auth.log` is available)*
+- 🏷️ **OS Version** — Displays `NAME` and `VERSION` from the system release info.  
+- ⏱️ **System Uptime** — Shows uptime in hours and minutes (without unnecessary load details).  
+- 📊 **Load Average** — Reports system load for the last 1, 5, and 15 minutes.  
+- 👥 **Currently Logged-in Users** — Displays active sessions.  
+- 🔐 **Failed Login Attempts (last 5)** — If `/var/log/auth.log` exists, shows the latest 5 failed attempts.  
+- 🧠 **CPU Usage** — Displays CPU usage percentage (checks if `mpstat` is installed).  
+- 💾 **Memory Usage** — Displays memory usage percentage with a warning for high usage.  
+- 🔝 **Top 5 Processes by CPU Usage** — Sorted list by CPU usage.  
+- 🔝 **Top 5 Processes by Memory Usage** — Sorted list by memory usage.  
+- 🗄️ **Disk Usage** — Displays disk usage filtered to `/dev/`, `/media/`, and `/mnt/` mount points.
 
 ---
 
 ## 🚀 Usage
 
-1. **Clone the repository** or manually copy the script to your server:
+Clone the repository or manually copy the script to your server:
 
-   ```bash
-   git clone https://github.com/yourusername/server-stats.git
-   cd server-stats
-   ```
+```bash
+git clone https://github.com/yourusername/server-stats.git
+cd server-stats
+```
 
-2. **Make the script executable**:
+Make the script executable:
 
-   ```bash
-   chmod +x server-stats.sh
-   ```
+```bash
+chmod +x server-stats.sh
+```
 
-3. **Run the script**:
+Run the script:
 
-   ```bash
-   ./server-stats.sh
-   ```
+```bash
+./server-stats.sh
+```
 
 ---
 
 ## 📂 Example Output
 
-```bash
-OS: Ubuntu 22.04.3 LTS
-Uptime: 3 days, 4:12
-Load Average: 0.35 0.42 0.51
-Users Logged In: 2
-CPU Usage: 15.3%
-Memory Usage: 2.1 GB / 8 GB (26.3%)
-Disk Usage: 18 GB / 50 GB (36%)
+```
+Operating System Version:
+    NAME="Ubuntu"
+    VERSION="24.04.3 LTS (Noble Numbat)"
 
-Top 5 Processes by CPU:
-  1. python3     12.3%
-  2. nginx       4.1%
-  ...
+System Uptime:
+    2:52, 1 user
 
-Top 5 Processes by Memory:
-  1. java        512 MB
-  2. postgres    400 MB
-  ...
+Current System Load Average:
+    0.18, 0.12, 0.10
 
-Failed login attempts (last 24h): 3
+Failed login attempts (last 5):
+    None
+
+CPU Usage: 0.50%
+
+Top 5 Processes by CPU Usage:
+    PID    PPID CMD                         %CPU
+  28545    5599 /opt/google/chrome/chrome -  2.6
+   2586    2336 /usr/bin/gnome-shell         1.7
+   ...
+
+Memory Usage: 16.9%
+
+Top 5 Processes by Memory Usage:
+    PID    PPID CMD                         %MEM
+   5578    2586 /opt/google/chrome/chrome    2.4
+   ...
+
+Total Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       457G   20G  414G   5% /
+/dev/sda1       1.1G  7.8M  1.1G   1% /boot/efi
 ```
 
 ---
 
 ## 📦 Requirements
 
-- Linux-based system
-- Bash shell (`/bin/bash`)
-- Standard system utilities: `top`, `free`, `df`, `uptime`, `who`, `grep`, etc.
+- Linux-based system  
+- Bash shell (`/bin/bash`)  
+- Standard system utilities:
+  - `mpstat` (optional)
+  - `free`
+  - `df`
+  - `uptime`
+  - `who`
+  - `grep`
+  - `tail`
+
+> 💡 **Note:** If `mpstat` is not installed, CPU usage will show a warning but the script continues running.
 
 ---
 
 ## 🔗 Project Link
 
-- 🌐 **Roadmap.sh Project Page**: [https://roadmap.sh/projects/server-stats](https://roadmap.sh/projects/server-stats)
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
+🌐 [Roadmap.sh Project Page](https://roadmap.sh/projects/server-stats)
 
 ---
 
 ## 👤 Author
 
-- **Juanito M. Ramos II**  
-- GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+**Juanito M. Ramos II**  
+GitHub: [https://github.com/Juaaanits](https://github.com/Juaaanits)
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+### ✅ Key Improvements
+
+- Added display of the **last 5 failed login attempts**  
+- Implemented **CPU usage check** for missing `mpstat`  
+- Simplified **uptime output** for readability  
+- **Filtered disk output** for relevant mounts only  
+- Highlighted **memory usage warnings**
