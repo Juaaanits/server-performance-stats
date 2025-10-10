@@ -27,7 +27,7 @@ The `server-stats.sh` script provides:
 Clone the repository or manually copy the script to your server:
 
 ```bash
-git clone https://github.com/yourusername/server-stats.git
+git clone https://github.com/Juaaanits/server-stats.git
 cd server-stats
 ```
 
