@@ -110,7 +110,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ## 👤 Author
 
 **Juanito M. Ramos II**  
-GitHub: [https://github.com/Juaaanits](https://github.com/Juaaanits)
+[GitHub](https://github.com/Juaaanits)
 
 ---
 
